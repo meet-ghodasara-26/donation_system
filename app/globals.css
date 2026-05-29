@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --saffron-500: #f97316;
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b;
+  --gold-600: #d97706;
+  --gold-700: #b45309;
+  --deep-maroon: #7b1e1e;
+  --cream: #fffdf7;
+  --warm-white: #faf6ef;
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-devanagari: 'Noto Serif Devanagari', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--warm-white);
+  color: #3d1a00;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.sacred-bg {
+  background-color: var(--warm-white);
+  background-image: 
+    radial-gradient(ellipse at 20% 20%, rgba(255, 177, 66, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(249, 115, 22, 0.06) 0%, transparent 50%);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-heading { font-family: var(--font-heading); }
+.font-devanagari { font-family: var(--font-devanagari); }
+
+.text-golden {
+  background: linear-gradient(135deg, #f59e0b, #d97706, #fbbf24, #b45309);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sacred-card {
+  /* background: linear-gradient(145deg, #ffffff, #fffbf3); */
+  /* border: 1px solid rgba(245, 158, 11, 0.25); */
+  border-radius: 16px;
+  /* box-shadow: 0 4px 20px rgba(180, 83, 9, 0.08), 0 1px 4px rgba(245, 158, 11, 0.15); */
+  transition: all 0.3s ease;
+}
+/* .sacred-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(180, 83, 9, 0.12), 0 2px 8px rgba(245, 158, 11, 0.2);
+} */
+
+.gold-border {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #f59e0b, #d97706, #fbbf24) border-box;
+}
+
+.ornamental-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold-600);
+  font-family: var(--font-heading);
+  letter-spacing: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+.ornamental-divider::before, .ornamental-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #f59e0b, transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(249, 115, 22, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6), 0 0 80px rgba(249, 115, 22, 0.3); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+  70% { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes highlightNew {
+  0% { background-color: rgba(245, 158, 11, 0.25); }
+  100% { background-color: transparent; }
+}
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes rotateOm {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-fade-in-up { animation: fadeInUp 0.6s ease forwards; }
+.animate-pop-in { animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-highlight { animation: highlightNew 3s ease-out forwards; }
+.animate-ticker { animation: ticker-scroll 30s linear infinite; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+.skeleton {
+  background: linear-gradient(90deg, #f3e8d0 25%, #fde5b0 50%, #f3e8d0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fdf3e3; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #f59e0b, #d97706); border-radius: 3px; }
+
+.donation-row-new { animation: highlightNew 3s ease-out forwards; }
+.ticker-container { overflow: hidden; white-space: nowrap; }
+.ticker-inner { display: inline-flex; animation: ticker-scroll 30s linear infinite; }
+.popup-backdrop { backdrop-filter: blur(4px); background: rgba(60, 20, 0, 0.6); }
+
+/* ─── Mobile responsive additions (original values unchanged on desktop) ─── */
+
+/* DonationTable: logos + mantra row */
+@media (max-width: 640px) {
+  /* shrink logos */
+  .logo-left  { width: 64px !important; left: 8px !important; }
+  .logo-right { width: 64px !important; right: 8px !important; }
+
+  /* mantra font */
+  .mantra-text { font-size: 13px !important; }
+
+  /* page title */
+  .page-title { font-size: 18px !important; top: -24px !important; }
+
+  /* header boxes */
+  .header-box { height: 52px !important; font-size: 14px !important; border-radius: 16px !important; }
+
+  /* data rows */
+  .row-cell   { height: 56px !important; border-radius: 16px !important; }
+  .row-serial { font-size: 14px !important; }
+  .row-name   { font-size: 15px !important; padding-left: 12px !important; padding-right: 12px !important; }
+  .row-amount { font-size: 15px !important; }
+
+  /* grid columns: tighter on mobile */
+  .donations-grid { grid-template-columns: 52px 1fr 120px !important; gap: 8px !important; }
+
+  /* popup */
+  .popup-card        { border-radius: 16px !important; min-height: auto !important; }
+  .popup-mantra      { padding: 10px 16px !important; font-size: 13px !important; }
+  .popup-logo        { width: 64px !important; height: 64px !important; }
+  .popup-logo-left   { left: 10px !important; top: 10px !important; }
+  .popup-logo-right  { right: 10px !important; top: 10px !important; }
+  .popup-subtitle    { font-size: 14px !important; margin-top: 56px !important; }
+  .popup-title       { font-size: 22px !important; letter-spacing: 2px !important; -webkit-text-stroke: 4px white !important; }
+  .popup-layout      { flex-direction: column !important; margin-top: 16px !important; }
+  .popup-left        { width: 100% !important; }
+  .popup-right       { width: 100% !important; }
+  .popup-donor-box   { min-height: 80px !important; border-radius: 20px !important; padding: 0 20px !important; }
+  .popup-donor-name  { font-size: 22px !important; }
+  .popup-service-box { min-height: 80px !important; border-radius: 20px !important; padding: 0 20px !important; margin-top: 12px !important; }
+  .popup-service-txt { font-size: 18px !important; }
+  .popup-amount-hdr  { height: 60px !important; font-size: 22px !important; }
+  .popup-amount-val  { font-size: 26px !important; }
+
+  /* donation form */
+  .form-wrapper { width: 96% !important; padding: 16px !important; }
+  .form-grid    { grid-template-columns: 1fr !important; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* tablet adjustments */
+  .logo-left  { width: 90px !important; left: 20px !important; }
+  .logo-right { width: 90px !important; right: 20px !important; }
+  .mantra-text { font-size: 20px !important; }
+  .page-title  { font-size: 26px !important; }
+  .header-box  { height: 60px !important; font-size: 20px !important; }
+  .row-cell    { height: 62px !important; }
+  .row-name    { font-size: 18px !important; }
+  .row-amount  { font-size: 18px !important; }
+  .donations-grid { grid-template-columns: 70px 1fr 200px !important; gap: 14px !important; }
+
+  .popup-logo        { width: 90px !important; height: 90px !important; }
+  .popup-logo-left   { left: 30px !important; }
+  .popup-logo-right  { right: 30px !important; }
+  .popup-title       { font-size: 28px !important; }
+  .popup-donor-name  { font-size: 30px !important; }
+  .popup-service-txt { font-size: 28px !important; }
+}

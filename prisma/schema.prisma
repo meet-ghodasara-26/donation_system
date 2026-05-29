@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Donation {
+  id           Int      @id @default(autoincrement())
+  name         String
+  nameGu       String
+  city         String
+  cityGu       String
+  message      String   @default("")
+  messageGu    String   @default("")
+  amount       Float
+  date         DateTime @default(now())
+  profileImage String?
+
+  @@map("donations")
+}

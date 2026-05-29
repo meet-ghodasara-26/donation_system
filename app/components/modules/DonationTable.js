@@ -135,7 +135,7 @@ export default function DonationTable({ isLoading }) {
       </div>
 
       {/* Rows */}
-      <div ref={scrollRef} className="overflow-hidden" style={{ height: '60vh', margin: '0px 16px' }}>
+      <div ref={scrollRef} className="overflow-hidden" style={{ height: '69vh', margin: '0px 16px' }}>
         {isLoading ? (
           <LoadingRows />
         ) : donations.length === 0 ? (

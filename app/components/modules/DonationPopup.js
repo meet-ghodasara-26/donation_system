@@ -105,6 +105,7 @@ export default function DonationPopup() {
           backgroundPosition: 'center',
           boxShadow: '0 30px 100px rgba(0,0,0,0.6)',
           backgroundImage: "url('/bg-banner.png')",
+          backgroundRepeat: 'no-repeat'
         }}
       >
         {/* Top mantra */}
